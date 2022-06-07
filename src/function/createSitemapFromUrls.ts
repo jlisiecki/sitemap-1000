@@ -1,7 +1,7 @@
 import { JSDOM } from 'jsdom';
-import { Url } from './getUrlsFromMaps';
+import { SitemapURL } from './getUrlsFromMaps';
 
-export default function createSitemapFromUrls(urls: Url[]) {
+export default function createSitemapFromUrls(urls: SitemapURL[]) {
     const { document } = new JSDOM('<root />', {
         contentType: 'application/xml',
     }).window;
@@ -25,8 +25,6 @@ export default function createSitemapFromUrls(urls: Url[]) {
         }
         urlsetElement.appendChild(urlElement);
     });
-
-    console.log(document.documentElement.outerHTML);
 
     return (
         '<?xml version="1.0" encoding="UTF-8"?>' +

@@ -1,14 +1,14 @@
 import { writeFile, mkdir } from 'fs/promises';
 import { existsSync } from 'fs';
 import createSitemapFromUrls from './function/createSitemapFromUrls';
-import getUrlsFromMap, { Url } from './function/getUrlsFromMaps';
+import getUrlsFromMap from './function/getUrlsFromMaps';
 import path from 'path';
 
 (async () => {
     // you can pass your sitemaps and indexes here
     const urls = await getUrlsFromMap(
         'https://example.com/sitemap-index.xml',
-        'https:/example.com/additional-sitemap.xml'
+        'https://example.com/additional-sitemap.xml'
     );
 
     // here you can set max length of single sitemap

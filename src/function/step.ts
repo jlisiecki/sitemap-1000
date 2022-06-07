@@ -1,9 +1,9 @@
-import { Url } from './getUrlsFromMaps';
+import { SitemapURL } from './getUrlsFromMaps';
 import request from './request';
 import sitemapsFromIndex from './sitemapsFromIndex';
 import urlsFromMap from './urlsFromSitemap';
 
-export default async function step(url: string): Promise<Url[]> {
+export default async function step(url: string): Promise<SitemapURL[]> {
     const map = await request(url);
     if (map.isIndex) {
         const urls = [];
